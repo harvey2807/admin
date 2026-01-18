@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users } from 'lucide-react';
 import '../styles/Admin.css';
+import { BarChart3 } from "lucide-react";
 
 const Sidebar: React.FC = () => {
   return (
@@ -20,6 +21,11 @@ const Sidebar: React.FC = () => {
           <Users size={20} />
           <span>Quản lý Account</span>
         </NavLink>
+          <NavLink to="/admin/user-stats" className="nav-item">
+              <BarChart3 size={18} />
+              <span>Thống kê người dùng</span>
+          </NavLink>
+
       </nav>
     </aside>
   );

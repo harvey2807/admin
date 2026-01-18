@@ -19,13 +19,13 @@ export const accountController = {
         }
     },
 
-    updateUser: async (id: string) => {
-        try {
-            return await userService.getAll();
-        } catch (error) {
-            console.error("Controller Error - fetch:", error);
-            throw error;
-        }
-    },
+    // updateUser: async (id: string) => {
+    //     try {
+    //         return await userService.getAll();
+    //     } catch (error) {
+    //         console.error("Controller Error - fetch:", error);
+    //         throw error;
+    //     }
+    // },
 
 };

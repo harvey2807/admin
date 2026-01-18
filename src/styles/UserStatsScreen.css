@@ -1,0 +1,264 @@
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+#root {
+    height: auto;
+}
+
+.container {
+    height: calc(100vh - 64px);
+    background-color: #f1f5f9;
+    padding: 20px;
+    padding-bottom: 120px;
+
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+}
+
+
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #cbd5f5;
+    border-radius: 6px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
+
+.title {
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.updatedAt {
+    color: #64748b;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cardRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 48%;
+    border-radius: 12px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 26px;
+    color: #3182ce;
+}
+
+.number {
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.label {
+    color: #64748b;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.smallCard {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.smallTitle {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.smallNumber {
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.chart {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chartTitle {
+    color: #64748b;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.barRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 120px;
+}
+
+.barContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+}
+
+.barValue {
+    color: #64748b;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.bar {
+    width: 14px;
+    background-color: #3182ce;
+    border-radius: 6px;
+}
+
+.engagementCard {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.engagementTitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.engagementPercent {
+    color: #0f172a;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.engagementStatus {
+    color: #334155;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.progressBg {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #3182ce;
+}
+
+.engagementDesc {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.actionRow {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.refreshBtn {
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.refreshBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.refreshIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.refreshText {
+    color: #3182ce;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+/* Online dot */
+.icon.online {
+    font-size: 22px;
+    color: #22c55e; /* xanh lá */
+}
+
+/* User icon dashboard style */
+.icon.user svg {
+    color: #3182ce; /* primary admin */
+}
+
+.refreshBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
