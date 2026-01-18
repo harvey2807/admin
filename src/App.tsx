@@ -3,6 +3,7 @@ import AdminLayout from './layouts/AdminLayout';
 import Accounts from './features/users/Accounts';
 import { PATHS } from './constants/paths';
 import LoginPage from './features/auth/LoginPage';
+import UserStatsScreen from './features/userStats/UserStatsScreen';
 import type { JSX } from 'react';
 
 // Thành phần bảo vệ Route
@@ -34,6 +35,7 @@ function App() {
         >
           <Route index element={<Dashboard />} />
           <Route path="accounts" element={<Accounts />} />
+            <Route path="user-stats" element={<UserStatsScreen />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/admin/login" replace />} />
