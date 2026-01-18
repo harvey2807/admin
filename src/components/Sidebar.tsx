@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, LogOut, UserCircle } from 'lucide-react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { LayoutDashboard, Users } from 'lucide-react';
 import '../styles/Admin.css';
 import { PATHS } from '../constants/paths';
-
+import { BarChart3 } from "lucide-react";
+import {UserCircle} from "lucide-react"
+import {useEffect} from "react";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 const Sidebar: React.FC = () => {
   const [isUsername, setUserName] = useState<string | null >(null)
   const navigate = useNavigate();
@@ -38,7 +42,7 @@ const Sidebar: React.FC = () => {
           <p className="user-role">Quản trị viên</p>
         </div>
       </div>
-      
+
       <nav className="sidebar-nav">
         <NavLink to="/admin" className="nav-item" end>
           <LayoutDashboard size={20} />
@@ -49,6 +53,11 @@ const Sidebar: React.FC = () => {
           <Users size={20} />
           <span>Quản lý Account</span>
         </NavLink>
+          <NavLink to="/admin/user-stats" className="nav-item">
+              <BarChart3 size={18} />
+              <span>Thống kê người dùng</span>
+          </NavLink>
+
       </nav>
 
       {/* Nút Logout nằm dưới cùng */}
