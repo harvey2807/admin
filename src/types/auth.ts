@@ -5,7 +5,7 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   token: string;
-  userId: string;
+  id: string;
   username: string;
 }
 
@@ -19,6 +19,6 @@ export interface SignupRequest {
 
 export interface SignupResponse {
   token: string;
-  userId: string;
+  id: string;
   username: string;
 }

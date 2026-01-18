@@ -11,7 +11,7 @@ export const authController = {
             return { success: false, message: 'Dữ liệu trả về không hợp lệ' };
             }
             localStorage.setItem("userToken", data.token);
-            localStorage.setItem("userId", data.userId);
+            localStorage.setItem("userId", data.id);
             localStorage.setItem("username", data.username);
             return { success: true };
         }  catch (error: any) {
