@@ -19,9 +19,9 @@ export const accountController = {
         }
     },
 
-    updateUser: async (id: string) => {
+    updateUser: async (id: string, formData: FormData) => {
         try {
-            return await userService.getAll();
+            return await userService.updateUser(id,formData);
         } catch (error) {
             console.error("Controller Error - fetch:", error);
             throw error;
