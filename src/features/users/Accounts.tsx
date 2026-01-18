@@ -29,8 +29,6 @@ const Accounts: React.FC = () => {
   const [globalFilter, setGlobalFilter] = useState('');
   const [data, setData] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
-  // --- FIX TÊN CÁC STATE ---
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -79,7 +77,6 @@ const Accounts: React.FC = () => {
     }),
   ];
 
-  // --- HÀM XỬ LÝ XÓA ---
   const handleDelete = async (id: string) => {
     if (window.confirm('Bạn có chắc chắn muốn xóa tài khoản này?')) {
       try {
@@ -92,7 +89,6 @@ const Accounts: React.FC = () => {
     }
   };
 
-  // --- HÀM XỬ LÝ POPUP SỬA ---
   const handleOpenEditModal = (user: User) => {
     setEditingUser({ ...user });
     setPreviewUrl(user.avatarUrl || null); // Hiển thị ảnh cũ nếu có
@@ -102,10 +98,10 @@ const Accounts: React.FC = () => {
 
   // --- XỬ LÝ FILE ẢNH ---
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+    const file = e.target.files?.[0];//Lấy ra file đầu tiên trong danh sách các file người dùng vừa chọn
     if (file) {
       setSelectedFile(file);
-      setPreviewUrl(URL.createObjectURL(file)); // Tạo link preview tạm thời
+      setPreviewUrl(URL.createObjectURL(file)); // Tạo link preview tạm thời có dạng blob:http://...
     }
   };
 
@@ -117,11 +113,9 @@ const Accounts: React.FC = () => {
       const formData = new FormData();
       // Đóng gói JSON User vào FormData cho Spring Boot @RequestPart
       formData.append('user', new Blob([JSON.stringify(editingUser)], { type: 'application/json' }));
-      
       if (selectedFile) {
         formData.append('file', selectedFile);
       }
-
       await accountController.updateUser(editingUser.id, formData);
       alert("Cập nhật thành công!");
       setIsModalOpen(false);
